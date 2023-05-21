@@ -1,17 +1,21 @@
-import { StyleSheet, Image } from 'react-native';
+import React from 'react';
+import { StyleSheet, Image, TouchableOpacity } from 'react-native';
+
 import { Text, View } from '../components/Themed';
 
 interface ComicIconProps {
     title: string;
     img: string;
+    comicId: string;
+    onPress: (comicId: string) => void;
 };
 
-const ComicIcon: React.FC<ComicIconProps> = ({title, img}) => {
+const ComicIcon: React.FC<ComicIconProps> = ({title, img, comicId, onPress}) => {
     return (
-        <View style={styles.iconContainer}>
+        <TouchableOpacity style={styles.iconContainer} onPress={() => onPress(comicId)}>
             <Image style={styles.comicImage} source={{ uri: img }} />
             <Text style={styles.comicTitle} >{title}</Text>
-        </View>
+        </TouchableOpacity>
     );
 };
 

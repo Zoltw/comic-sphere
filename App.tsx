@@ -8,8 +8,12 @@ import { useColorScheme } from 'react-native';
 import { SplashScreen } from 'expo-router';
 import { useFonts } from 'expo-font';
 
+export type RootStackParamList = {
+  Dashboard: undefined;  // If no parameters are expected
+  ComicDetails: { comicId: string };  // If a "comicId" parameter is expected
+};
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<RootStackParamList>();
 const queryClient = new QueryClient();
 
 const App = () => {
@@ -38,7 +42,7 @@ const AppRoot = () => {
         <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
           <Stack.Navigator initialRouteName="Dashboard">
             <Stack.Screen name="Dashboard" component={Dashboard} />
-            <Stack.Screen name="ComicDetail" component={ComicDetails} />
+            <Stack.Screen name="ComicDetails" component={ComicDetails} />
           </Stack.Navigator>
         </ThemeProvider>
       </NavigationContainer>
