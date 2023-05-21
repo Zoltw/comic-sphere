@@ -12,8 +12,8 @@ interface ComicIconProps {
 
 const ComicIcon: React.FC<ComicIconProps> = ({title, img, comicId, onPress}) => {
     return (
-        <TouchableOpacity style={styles.iconContainer} onPress={() => onPress(comicId)}>
-            <Image style={styles.comicImage} source={{ uri: img }} />
+        <TouchableOpacity testID={'comic-icon'} style={styles.iconContainer} onPress={() => onPress(comicId)}>
+            <Image testID={'comic-image'} style={styles.comicImage} source={{ uri: img }} />
             <Text style={styles.comicTitle} >{title}</Text>
         </TouchableOpacity>
     );
@@ -22,6 +22,7 @@ const ComicIcon: React.FC<ComicIconProps> = ({title, img, comicId, onPress}) => 
 const styles = StyleSheet.create({
     comicTitle: {
       fontSize: 10,
+      marginTop: 5,
       fontWeight: 'bold',
       textAlign: 'center',
     },

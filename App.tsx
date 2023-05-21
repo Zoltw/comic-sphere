@@ -9,8 +9,8 @@ import { SplashScreen } from 'expo-router';
 import { useFonts } from 'expo-font';
 
 export type RootStackParamList = {
-  Dashboard: undefined;  // If no parameters are expected
-  ComicDetails: { comicId: string };  // If a "comicId" parameter is expected
+  Dashboard: undefined; 
+  ComicDetails: { comicId: string };
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
