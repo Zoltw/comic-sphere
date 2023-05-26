@@ -1,4 +1,4 @@
- <h1 align="center">Comics place</h1>
+ <h1 align="center">Comics sphere</h1>
  <br/>
 
 ## Setting up development environment of project
@@ -12,12 +12,16 @@
  ```bash
  git clone https://github.com/Zoltw/senga-task.git
  ```
+3. In working directory
+ ```bash
+yarn install
+ ```
  3. In working directory
   ```bash
   node server/server.js
   ```
 4. Open second terminal and in working directory
  ```bash
-npm start
+yarn start
  ```
  5. Server is running on port 19000 - `http://localhost:19000`
